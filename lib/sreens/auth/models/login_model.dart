@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:js';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:task_23_fulllogin/sreens/home/home_page.dart';
 
 class LoginModel {
   String email;
@@ -30,6 +33,8 @@ class LoginModel {
         var data = jsonDecode(body);
         print("token for login is: ${data['token']}");
         print('login successfully');
+        Navigator.pushReplacement(context as BuildContext,
+            MaterialPageRoute(builder: (context) => const HomePage()));
       } else {
         print('Login failed, status_code => ${response.statusCode}');
       }

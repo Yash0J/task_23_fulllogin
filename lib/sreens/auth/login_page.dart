@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:task_23_fulllogin/sreens/home/home_page.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/shared/custom_widgits.dart';
 import 'models/login_model.dart';
@@ -192,6 +193,8 @@ class _LoginState extends State<Login> {
             email: _emailController.text.toString(),
             password: _passwordController.text.toString(),
           ));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
         }
       },
       style: TextButton.styleFrom(
